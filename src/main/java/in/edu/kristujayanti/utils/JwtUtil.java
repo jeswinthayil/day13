@@ -14,7 +14,7 @@ public class JwtUtil {
         JWTAuthOptions config = new JWTAuthOptions()
                 .addPubSecKey(new PubSecKeyOptions()
                         .setAlgorithm("HS256")
-                        .setBuffer("super-secret-key")); // Replace this with an env-secured key in production
+                        .setBuffer("super-secret-key"));
 
         this.jwtAuth = JWTAuth.create(vertx, config);
     }
@@ -22,7 +22,7 @@ public class JwtUtil {
     public String generateToken(String email) {
         JsonObject claims = new JsonObject()
                 .put("email", email)
-                .put("exp", (System.currentTimeMillis() / 1000) + 3600); // ⏳ 1 hour expiry (in seconds)
+                .put("exp", (System.currentTimeMillis() / 1000) + 3600);
         return jwtAuth.generateToken(claims);
     }
 

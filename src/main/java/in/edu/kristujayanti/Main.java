@@ -49,8 +49,8 @@ public class Main extends AbstractVerticle{
         vertx.createHttpServer()
                 .requestHandler(router)
                 .listen(8888)
-                .onSuccess(server -> System.out.println("✅ Server running on http://localhost:8888"))
-                .onFailure(err -> System.err.println("❌ Server failed to start: " + err.getMessage()));
+                .onSuccess(server -> System.out.println("Server running on http://localhost:8888"))
+                .onFailure(err -> System.err.println("Server failed to start: " + err.getMessage()));
 
     }
 

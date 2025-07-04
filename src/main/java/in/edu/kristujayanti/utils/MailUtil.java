@@ -31,7 +31,7 @@ public class MailUtil {
                 .setText(content);
 
         mailClient.sendMail(message)
-                .onSuccess(res -> System.out.println("📧 Mail sent to " + to))
-                .onFailure(err -> System.err.println("❌ Failed to send mail to " + to + ": " + err.getMessage()));
+                .onSuccess(res -> System.out.println("Mail sent to " + to))
+                .onFailure(err -> System.err.println(" Failed to send mail to " + to + ": " + err.getMessage()));
     }
 }
